@@ -72,7 +72,7 @@ export default function SearchResults(props) {
                                     </div>
                                     <p>Cast: {element.Actors}</p>
                                     <p className='p-0 m-0'>{element.Plot}</p>
-                                    <p>A film by <b>{element.Director}</b></p>
+                                    <p>A film by <span className='text-custom'>{element.Director}</span></p>
                                     <p className='p-0 m-0'>Runtime: <b>{element.Runtime}</b></p>
                                     <p className='p-0 mb-2'>Total Box-office Collection: {element.BoxOffice}</p>
                                     <i className="text-muted my-5">Released on {element.Released}</i>
