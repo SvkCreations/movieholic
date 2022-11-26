@@ -23,7 +23,6 @@ export default function SearchResults(props) {
 
             const response = await fetch(url);
             const json = await response.json();
-            console.log(json);
             if (json.Response === "True") {
                 setState({
                     results: [json],
@@ -48,7 +47,6 @@ export default function SearchResults(props) {
 
             const response = await fetch(searchUrl);
             const json = await response.json();
-            console.log(json);
             if (json.Response === "True") {
                 setsearch({
                     results: json.Search,

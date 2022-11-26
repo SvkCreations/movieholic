@@ -29,7 +29,7 @@ function App() {
               <div className="col-lg-6 mx-auto">
                 <p className="lead mb-4">Here you get accurate information about all your favourite movies. From Ratings to Cast, from Movie plot to Oscar nominations, you can learn everything. Not just of movies, you can now gather information about your favourite TV series and specials too. So what are you waiting for? <br></br>Get Started Now!</p>
                   <div className="d-flex">
-                    <input className="form-control me-2" value={value} onChange={handleChange} placeholder="Enter movie, series name..." aria-label="Search" data-bs-toggle="dropdown" aria-expanded="false" />
+                    <input className="form-control me-2" value={value} onChange={handleChange} placeholder="Enter movie, series name..." aria-label="Search"/>
                     <Link className="btn btn-outline-custom-primary" onClick={handleClick} to="/search">Search</Link>
                 </div>
               </div>
