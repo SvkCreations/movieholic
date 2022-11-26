@@ -41,9 +41,10 @@ export default function SearchResults(props) {
         <div className='container my-3 my-md-5 pb-4 pb-md-5 border-bottom'>
             {state.success &&
                 <div>
+                    <h5 className="text-custom px-3 px-md-0 pb-1">Search Results for "{props.query}"</h5>
                     {state.loading &&
                         <div>
-                            <h5 className="text-custom px-3 px-md-0 pb-1">Search Results for "{props.query}"</h5>
+                            
                             <Loading />
                         </div>
                     }
