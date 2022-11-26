@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/movieholic/static/css/main.faadee6a.css",
-    "main.js": "/movieholic/static/js/main.e6902fff.js",
+    "main.js": "/movieholic/static/js/main.8cf12b81.js",
     "static/js/787.90e7ef9d.chunk.js": "/movieholic/static/js/787.90e7ef9d.chunk.js",
     "static/media/nodata.png": "/movieholic/static/media/nodata.a0cf88a0091c7b0c39f8.png",
     "static/media/loading.gif": "/movieholic/static/media/loading.7059968589152939dab1.gif",
     "static/media/rotten-tomatoes.png": "/movieholic/static/media/rotten-tomatoes.c04570a151755a35548f.png",
     "index.html": "/movieholic/index.html",
     "main.faadee6a.css.map": "/movieholic/static/css/main.faadee6a.css.map",
-    "main.e6902fff.js.map": "/movieholic/static/js/main.e6902fff.js.map",
+    "main.8cf12b81.js.map": "/movieholic/static/js/main.8cf12b81.js.map",
     "787.90e7ef9d.chunk.js.map": "/movieholic/static/js/787.90e7ef9d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.faadee6a.css",
-    "static/js/main.e6902fff.js"
+    "static/js/main.8cf12b81.js"
   ]
 }
