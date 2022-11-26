@@ -11,7 +11,13 @@ export default function SearchResults(props) {
         loading: true,
         success: true
     })
+    const [search, setsearch] = useState({
+        results: [],
+        loading: true,
+        success: true
+    })
     const url = `https://www.omdbapi.com/?apikey=9ca4c84e&t=${props.query}`
+    const searchUrl = `https://www.omdbapi.com/?apikey=9ca4c84e&s=${props.query}&page=1`
     useEffect(() => {
         const fetchData = async () => {
 
@@ -37,6 +43,31 @@ export default function SearchResults(props) {
 
         fetchData();
     }, [])
+    useEffect(() => {
+        const fetchData = async () => {
+
+            const response = await fetch(searchUrl);
+            const json = await response.json();
+            console.log(json);
+            if (json.Response === "True") {
+                setsearch({
+                    results: json.Search,
+                    loading: false,
+                    success: true
+                })
+            }
+            else {
+                setsearch({
+                    results: [],
+                    loading: false,
+                    success: false
+                })
+            }
+
+        };
+
+        fetchData();
+    }, [])
     return (
         <div className='container my-3 my-md-5 pb-4 pb-md-5 border-bottom'>
             {state.success &&
@@ -50,7 +81,7 @@ export default function SearchResults(props) {
                     }
                     {state.results.map((element) => {
                         return (
-                            <div key={element.imdbID} className="row featurette d-flex align-items-center justify-content-center p-3 p-md-0 gap-4 gap-md-0">
+                            <div key={element.imdbID} className="row featurette d-flex align-items-center border-bottom justify-content-center p-3 pb-md-5 gap-4 gap-md-0">
                                 <div className="col-md-7 order-2">
                                     <div className="row d-flex align-items-center justify-content-center">
                                         <div className="col-md-6">
@@ -73,7 +104,7 @@ export default function SearchResults(props) {
                                     </div>
                                     <p>Cast: {element.Actors}</p>
                                     <p className='p-0 m-0'>{element.Plot}</p>
-                                    <p>A film by <span className='text-custom'>{element.Director}</span></p>
+                                    <p>A {element.Type} by <span className='text-custom'>{element.Director}</span></p>
                                     <p className='p-0 m-0'>Runtime: <b>{element.Runtime}</b></p>
                                     <p className='p-0 mb-2'>Total Box-office Collection: {element.BoxOffice}</p>
                                     <i className="text-muted my-5">Released on {element.Released}</i>
@@ -90,6 +121,21 @@ export default function SearchResults(props) {
             {!state.success &&
                 <Nodata />
             }
+
+            <div className="container mt-5">
+                <h2 className="text-custom fw-bold">All results</h2>
+                <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
+                    {search.loading && <Loading/>}
+                    {search.results.map((element) => {
+                        return (
+                            <div className="col" key={element.imdbID}>
+                                <div className="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style={{ backgroundImage: `url(${element.Poster})` }}>
+                                </div>
+                            </div>
+                        )
+                    })}
+                    </div>
+            </div>
 
         </div>
     )
