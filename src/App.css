@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body{
+    background-color: #121212;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+.navbar{
+    background-color: #2b005c;
+}
+.text-custom{
+    color: #bb86fc;
+}
+.btn-custom-primary{
+    background-color: #bb86fc;
+}
+.btn-outline-custom-primary{
+    background: none;
+    border: 2px solid #bb86fc;
+    color: #bb86fc;
+}
+.card{
+    min-height: 600px;
+    background-size: cover;
+}
+
