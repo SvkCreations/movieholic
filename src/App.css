@@ -19,7 +19,8 @@ body{
     color: #bb86fc;
 }
 .card{
-    min-height: 600px;
+    min-height: 500px;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
